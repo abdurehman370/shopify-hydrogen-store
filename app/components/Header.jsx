@@ -108,8 +108,9 @@ function HeaderMenuMobileToggle() {
     <button
       className="header-menu-mobile-toggle reset"
       onClick={() => open('mobile')}
+      aria-label="Open menu"
     >
-      <h3>☰</h3>
+      <span style={{fontSize: '1.5rem', lineHeight: 1}}>☰</span>
     </button>
   );
 }
@@ -143,8 +144,18 @@ function CartBadge({count}) {
           url: window.location.href || '',
         });
       }}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.35rem',
+        padding: '0.5rem 0.75rem',
+        background: count ? 'rgba(196, 92, 62, 0.1)' : 'transparent',
+        borderRadius: 'var(--radius-md)',
+        fontWeight: 500,
+      }}
     >
-      Cart {count === null ? <span>&nbsp;</span> : count}
+      <span aria-hidden>🛒</span>
+      Cart {count === null ? <span>&nbsp;</span> : `(${count})`}
     </a>
   );
 }
@@ -218,8 +229,8 @@ const FALLBACK_HEADER_MENU = {
  */
 function activeLinkStyle({isActive, isPending}) {
   return {
-    fontWeight: isActive ? 'bold' : undefined,
-    color: isPending ? 'grey' : 'black',
+    fontWeight: isActive ? 600 : undefined,
+    color: isPending ? 'var(--color-muted)' : isActive ? 'var(--color-accent)' : undefined,
   };
 }
 

@@ -105,7 +105,7 @@ function RecommendedProducts({products}) {
   return (
     <div className="recommended-products">
       <h2>Recommended Products</h2>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div style={{minHeight: 200, display: 'flex', alignItems: 'center', color: 'var(--color-muted)'}}>Loading products...</div>}>
         <Await resolve={products}>
           {(response) => (
             <div className="recommended-products-grid">

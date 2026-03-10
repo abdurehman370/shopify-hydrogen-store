@@ -42,17 +42,30 @@ export default function SearchPage() {
       <h1>Search</h1>
       <SearchForm>
         {({inputRef}) => (
-          <>
+          <div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap', maxWidth: 480, marginBottom: '2rem'}}>
             <input
               defaultValue={term}
               name="q"
-              placeholder="Search…"
+              placeholder="Search products, collections..."
               ref={inputRef}
               type="search"
+              style={{flex: 1, minWidth: 200}}
             />
-            &nbsp;
-            <button type="submit">Search</button>
-          </>
+            <button
+              type="submit"
+              style={{
+                padding: '0.75rem 1.5rem',
+                background: 'var(--color-accent)',
+                color: 'white',
+                border: 'none',
+                borderRadius: 'var(--radius-md)',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              Search
+            </button>
+          </div>
         )}
       </SearchForm>
       {error && <p style={{color: 'red'}}>{error}</p>}

@@ -120,12 +120,24 @@ export default function Product() {
           selectedVariant={selectedVariant}
         />
         <br />
-        <br />
-        <p>
-          <strong>Description</strong>
-        </p>
-        <br />
-        <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
+        <div
+          className="product-description"
+          style={{
+            marginTop: '2rem',
+            paddingTop: '2rem',
+            borderTop: '1px solid var(--color-border)',
+          }}
+        >
+          <h3 style={{marginBottom: '1rem'}}>Description</h3>
+          <div
+            className="prose"
+            dangerouslySetInnerHTML={{__html: descriptionHtml}}
+            style={{
+              lineHeight: 1.7,
+              color: 'var(--color-text-secondary)',
+            }}
+          />
+        </div>
         <br />
       </div>
       <Analytics.ProductView

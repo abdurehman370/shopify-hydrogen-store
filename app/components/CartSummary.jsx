@@ -36,11 +36,25 @@ function CartCheckoutActions({checkoutUrl}) {
   if (!checkoutUrl) return null;
 
   return (
-    <div>
-      <a href={checkoutUrl} target="_self">
-        <p>Continue to Checkout &rarr;</p>
+    <div style={{marginTop: '1rem'}}>
+      <a
+        href={checkoutUrl}
+        target="_self"
+        className="cart-checkout-btn"
+        style={{
+          display: 'inline-block',
+          width: '100%',
+          padding: '1rem 1.5rem',
+          background: 'var(--color-accent)',
+          color: 'white',
+          borderRadius: 'var(--radius-lg)',
+          fontWeight: 600,
+          textAlign: 'center',
+          textDecoration: 'none',
+        }}
+      >
+        Continue to Checkout →
       </a>
-      <br />
     </div>
   );
 }

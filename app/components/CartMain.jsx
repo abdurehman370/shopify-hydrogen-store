@@ -87,14 +87,23 @@ export function CartMain({layout, cart: originalCart}) {
 function CartEmpty({hidden = false}) {
   const {close} = useAside();
   return (
-    <div hidden={hidden}>
-      <br />
-      <p>
-        Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
-        started!
+    <div hidden={hidden} style={{padding: '2rem 0', textAlign: 'center'}}>
+      <p style={{marginBottom: '1rem', color: 'var(--color-text-secondary)'}}>
+        Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you started!
       </p>
-      <br />
-      <Link to="/collections" onClick={close} prefetch="viewport">
+      <Link
+        to="/collections"
+        onClick={close}
+        prefetch="viewport"
+        style={{
+          display: 'inline-block',
+          padding: '0.75rem 1.5rem',
+          background: 'var(--color-accent)',
+          color: 'white',
+          borderRadius: 'var(--radius-md)',
+          fontWeight: 600,
+        }}
+      >
         Continue shopping →
       </Link>
     </div>
