@@ -8,19 +8,26 @@
     "build": "shopify hydrogen build --codegen",
     "dev": "shopify hydrogen dev --codegen",
     "preview": "shopify hydrogen preview --build",
+    "start": "node express-server.mjs",
+    "start:node": "NODE_ENV=production node express-server.mjs",
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "codegen": "shopify hydrogen codegen && react-router typegen"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
+    "@react-router/express": "7.12.0",
     "@shopify/hydrogen": "*2026.1.1",
     "graphql": "^16.10.0",
+    "compression": "^1.7.4",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
     "graphql-tag": "^2.12.6",
     "isbot": "^5.1.22",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "7.12.0",
     "react-router-dom": "7.12.0",
+    "morgan": "^1.10.0",
     "tailwindcss": "^4.1.6"
   },
   "devDependencies": {
